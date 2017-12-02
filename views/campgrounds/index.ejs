@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/main.css" />
+        
+    </head>
+    <body>
+        
+
+            <% if(error && error.length > 0) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+            <% } %>
+            
+            <% if(success && success.length > 0) { %>
+                <div class="alert alert-success" role="alert">
+                    <%= success %>
+                </div>
+            <% } %>
+
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-faded">
+            <div class="container">
+                <a class="navbar-brand" href="/">YelpCamp</a>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="/campgrounds">Campgrounds</a>
+                    <% if(!currentUser){ %>
+                        <a class="nav-item nav-link" href="/login">Login</a>
+                        <a class="nav-item nav-link" href="/register">Sign Up</a>
+                    <% } else { %>
+                        <a class="nav-item nav-link" href="#">Hello, <%= currentUser.username %></a>
+                        <a class="nav-item nav-link" href="/logout">Logout</a>
+                    <% } %>
+                </div>
+                </div>
+            </div>
+        </nav>
+        
+        <header class="jumbotron d-flex text-center align-items-center">
+           <div class="container justify-content-center align-items-center">
+                <h1 class="mb-2">Welcome To YelpCamp</h1>
+                <h4 class="mb-5">View our hand-picked campgrounds from all over the world.</h4>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+                </p>
+           </div>
+        </header>
+            
+        <div class="container content">
+            <!---->
+            <div class="row intro">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <h3>Our Most Popular Campgrounds</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quos nam amet odit labore neque error dolor, animi saepe! Repellendus minus nobis quasi vitae eum corrupti itaque animi accusamus doloribus.</p>
+                    <hr>
+                </div>
+            </div>
+            
+            <!---->
+            <div class="row text-center justify-content-center align-items-center">
+                <% campgrounds.forEach(function(campground){ %>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card mb-5">
+                            <img class="card-img-top" src="<%= campground.image %>" />
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h4><%= campground.name %></h4>
+                                </div>
+                                <p class="card-text">
+                                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-light">More Info</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %> 
+            </div>
+        
+        </div>
+
+        <footer>
+            <div class="container">
+                
+                <nav>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </nav>
+                
+                <hr>
+                <section class="social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                </section>
+
+                <section class="additional">
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, tenetur.</h5>
+                    <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis adipisci minima esse, animi facilis quae!</h6>
+                </section>
+                
+                <section class="contact">
+                    <span><i class="fa fa-phone"></i> (999)999-999</span>
+                    <span><i class="fa fa-envelope"></i> ouremail@email.com</span>
+                </section>
+                
+
+                </div>
+            </div>
+        </footer>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>

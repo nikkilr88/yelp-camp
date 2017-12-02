@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oops!</title>
+        
+        <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/error.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+    <body>
+        
+        <video src="./media/camp.mp4" autoplay loop></video>
+        
+        <div class="text">
+            <p>It looks like you got lost...</p>
+            <hr>
+            <h3>Come find yourself at one of our campgrounds.</h3>
+            <br>
+            <a href="/campgrounds" class="btn btn-primary">Let's Go!</a>
+        </div>
+        <div class="overlay"></div>
+        
+        <script>
+            document.querySelector('video').playbackRate = 0.5;
+        </script>
+        
+<% include partials/footer %>

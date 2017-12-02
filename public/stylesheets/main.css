@@ -1,0 +1,133 @@
+body {
+    background: #fff;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.intro hr {
+    border: 0;
+    width: 250px;
+    height: 3px;
+    background: #3498db;
+}
+
+.container.content {
+    margin: 100px auto;
+}
+
+.intro {
+    margin: 100px auto;
+}
+
+.intro p {
+    margin: 35px 0;
+}
+
+
+nav#navbar {
+    width: 100%;
+    z-index: 999;
+    position: absolute;
+    transition: all 0.2s;
+}
+
+nav.bg-dark {
+    transition: all 0.2s;
+}
+
+.alert {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0 !important;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: translateY(-50px);
+}
+
+.jumbotron {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('../media/yelp-md.jpeg');
+    background-size: cover;
+    color: white;
+    border-radius: 0 !important;
+    padding: 150px 0;
+}
+
+.jumbotron h1 {
+    font-size: 4rem;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+#deleteForm {
+    display: inline-block;
+}
+
+footer {
+    background: #343a40;
+    padding: 25px 0;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+}
+
+footer a {
+    color: rgba(255,255,255,0.5);
+}
+
+footer nav, footer section, hr {
+    margin-bottom: 30px;
+}
+
+footer nav {
+    list-style: none;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+footer nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+footer .social .fa {
+    font-size: 22px;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    margin: 0 15px;
+    color: #343a40;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+}
+
+footer .contact span {
+    margin: 0 15px;
+    font-weight: bold;
+    display: inline-block;
+}
